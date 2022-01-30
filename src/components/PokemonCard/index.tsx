@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IPokemon from '../../interfaces/IPokemon';
 import api from '../../services/api';
 
-// import { Container } from './styles';
+import { Container, TypesContainer, Type } from './styles';
 
 type IProps  = {
   name: string;
@@ -22,7 +22,12 @@ const PokemonCard: React.FC<IProps> = ({ name }) => {
   });
 
   return (
-    <h2>{pokemon?.name}</h2>
+    <Container>
+      <h2>{pokemon?.name}</h2>
+      <TypesContainer>
+        {pokemon?.types.map((type) => <Type name={type.type.name}>{type.type.name}</Type>)}
+      </TypesContainer>
+    </Container>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import api from "./services/api";
+import GlobalStyle from "./styles/global";
 
 type IPokemonListState = {
   name: string;
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyle />
       {pokemonList.map(({ name }, i) => <PokemonCard name={name} key={i} />)}
     </>
   )
