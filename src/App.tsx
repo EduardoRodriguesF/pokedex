@@ -1,19 +1,28 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
+import PokemonCard from "./components/PokemonCard";
 import api from "./services/api";
 
+type IPokemonListState = {
+  name: string;
+}
+
 function App() {
-  const getPokemon = async () => {
-    await api.get('pokemon/?limit=151').then((response) => {
-      console.log('>>> response', response.data);
+  const [pokemonList, setPokemonList] = useState<IPokemonListState[]>([]);
+
+  const getPokemon = useCallback( async() => {
+    await api.get('pokemon/?limit=151').then(({ data }) => {
+      setPokemonList(data.results);
     });
-  }
+  }, []);
 
   useEffect(() => {
     getPokemon();
   }, []);
 
   return (
-    <h1>Hello world</h1>
+    <>
+      {pokemonList.map(({ name }, i) => <PokemonCard name={name} key={i} />)}
+    </>
   )
 }
 
