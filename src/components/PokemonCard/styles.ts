@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import pokeTypeColors from '../../utils/pokeTypeColors';
+import * as colors from '../../styles/colors';
 import { darken } from 'polished';
 
-interface TypeProps {
+interface ITypeProps {
   name: string;
 }
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 500px;
-  background: #333C62;
+  background: ${colors.theme.background};
   padding: 24px 16px;
   border-radius: 8px;
 `;
@@ -22,10 +22,10 @@ export const TypesContainer = styled.div`
   margin-top: 16px;
 `
 
-export const Type = styled.span`
+export const Type = styled.span<ITypeProps>`
   padding: 6px 16px;
   border-radius: 50px;
 
-  color: ${({ name }) => darken(0.3, pokeTypeColors(name).primary)};
-  background: ${({ name }) => pokeTypeColors(name).primary};
+  color: ${({ name }) => darken(0.3, colors.types[name])};
+  background: ${({ name }) => colors.types[name]};
 `

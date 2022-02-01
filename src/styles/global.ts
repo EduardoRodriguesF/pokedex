@@ -1,9 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import * as colors from './colors';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: #eaeced;
-    background: #252C4C;
+    color: ${colors.theme.font};
+    background: ${colors.theme.absoluteBackground};
     font-family: 'Open-Sans', Helvetica, Sans-Serif;
   }
 
