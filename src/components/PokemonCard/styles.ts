@@ -10,7 +10,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 500px;
   background: ${colors.theme.background};
   padding: 24px 16px;
   border-radius: 8px;
