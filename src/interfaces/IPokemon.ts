@@ -15,6 +15,7 @@ interface IStat {
 }
 
 interface IPokemon {
+  id: number;
   order: number;
   name: string;
   types: [IType];

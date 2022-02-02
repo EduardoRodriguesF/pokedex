@@ -3,29 +3,30 @@ interface IColors {
 }
 
 const theme: IColors = {
-  font: '#eaeced',
+  font: '#1B2530',
+  contrastFont: '#fff',
   highlight: '#F9BA17',
-  background: '#333C62',
-  absoluteBackground: '#252C4C',
+  background: '#fff',
+  absoluteBackground: '#fff',
 
   
 }
 
 const types: IColors = {
-  normal: '#A8A77A',
-  fire: '#EE8130',
-  water: '#6390F0',
-  electric: '#F7D02C',
-  grass: '#7AC74C',
+  normal: '#b3ae94',
+  fire: '#FB6B6B',
+  water: '#76BDFE',
+  electric: '#FFCE4B',
+  grass: '#48D0B0',
   ice: '#96D9D6',
-  fighting: '#C22E28',
+  fighting: '#a6392d',
   poison: '#A33EA1',
   rock: '#B6A136',
   ground: '#E2BF65',
   flying: '#A98FF3',
   psychic: '#F95587',
   bug: '#A6B91A',
-  ghost: '#735797',
+  ghost: '#7C538C',
   dragon: '#6F35FC',
   dark: '#705746',
   steel: '#B7B7CE',

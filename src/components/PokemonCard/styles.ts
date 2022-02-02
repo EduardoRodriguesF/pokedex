@@ -1,30 +1,48 @@
 import styled from 'styled-components';
+import { shade, tint } from 'polished';
 import * as colors from '../../styles/colors';
-import { darken } from 'polished';
 
-interface ITypeProps {
-  name: string;
+interface IContainerProps {
+  type: string;
 }
 
-export const Container = styled.div`
+export const Container = styled.div<IContainerProps>`
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: ${colors.theme.background};
+  color: ${colors.theme.contrastFont};
+  background: ${({ type }) => colors.types[type]};
   padding: 24px 16px;
-  border-radius: 8px;
+  border-radius: 16px;
+
+  ul { 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 8px;
+    margin-top: 16px;
+
+    li { 
+      display: inline;
+      width: max-content;
+      padding: 8px 16px;
+      border-radius: 50px;
+
+      background: ${({ type }) => tint(0.2, colors.types[type])};
+    }
+  }
 `;
 
-export const TypesContainer = styled.div`
-  display: flex;
-  gap: 6px;
-  margin-top: 16px;
-`
+export const PokeId = styled.span`
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 24px;
+  opacity: 0.25;
 
-export const Type = styled.span<ITypeProps>`
-  padding: 6px 16px;
-  border-radius: 50px;
-
-  color: ${({ name }) => darken(0.3, colors.types[name])};
-  background: ${({ name }) => colors.types[name]};
-`
+  &::before {
+    content: '#';
+  }
+`;

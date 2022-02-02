@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${colors.theme.font};
     background: ${colors.theme.absoluteBackground};
-    font-family: 'Open-Sans', Helvetica, Sans-Serif;
+    font-family: 'Poppins', 'Open-Sans', Helvetica, Sans-Serif;
   }
 
   * {
