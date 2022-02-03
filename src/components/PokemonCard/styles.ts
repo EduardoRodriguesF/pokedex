@@ -11,12 +11,22 @@ export const Container = styled.div<IContainerProps>`
   position: relative;
   display: flex;
   justify-content: space-between;
+  height: 320px;
   color: ${colors.theme.contrastFont};
   background: ${({ type }) => colors.types[type]};
   padding: 0 16px;
   border-radius: 16px;
   overflow: hidden;
   z-index: 2;
+  transform: none;
+  transition: all 0.35s;
+  
+  &.loaded {
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
 
   &::before {
     content: '';
@@ -56,6 +66,7 @@ export const Infos = styled.div`
 export const Illustration = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: end;
   padding: 8px 0;
 `;

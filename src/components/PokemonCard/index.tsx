@@ -17,20 +17,26 @@ const PokemonCard: React.FC<IProps> = ({ name }) => {
     });
   }, []);
 
+  const handleClick = useCallback(() => {
+    if (!pokemon) return;
+    
+    console.log('>>> click', name);
+  }, []);
+
   useEffect(() => {
     getPokemon();
   });
 
   return (
-    <Container type={pokemon?.types[0].type.name || 'normal'}>
+    <Container className={pokemon && 'loaded' || ''} onClick={handleClick} type={pokemon?.types[0].type.name || 'normal'}>
       <Infos>
-        <h2>{pokemon?.name}</h2>
+        <h2>{pokemon?.name || 'loading...'}</h2>
         <ul>
           {pokemon?.types.map((type) => <li>{type.type.name}</li>)}
         </ul>
       </Infos>
       <Illustration>
-        <PokeId>{pokemon?.id}</PokeId>
+        <PokeId>{pokemon?.id || '???'}</PokeId>
         <PokeImage src={pokemon?.sprites.other["official-artwork"].front_default} />
       </Illustration>
     </Container>
