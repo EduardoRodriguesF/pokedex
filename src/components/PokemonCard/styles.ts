@@ -10,7 +10,9 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   position: relative;
   display: flex;
+  flex: 1;
   justify-content: space-between;
+  min-width: 320px;
   height: 320px;
   color: ${colors.theme.contrastFont};
   background: ${({ type }) => colors.types[type]};
@@ -23,6 +25,7 @@ export const Container = styled.div<IContainerProps>`
   
   &.loaded {
     cursor: pointer;
+    
     &:hover {
       transform: translateY(-3px);
     }

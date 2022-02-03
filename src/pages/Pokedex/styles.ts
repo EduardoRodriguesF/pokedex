@@ -5,12 +5,8 @@ export const Container = styled.div`
 `;
 
 export const PokemonList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 24px;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
 `
