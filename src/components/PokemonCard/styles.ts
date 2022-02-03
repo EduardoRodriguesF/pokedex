@@ -44,6 +44,11 @@ export const Container = styled.div<IContainerProps>`
     z-index: 1;
   }
 
+  h2 {
+    white-space: nowrap;
+    font-size: 30px;
+  }
+
   ul { 
     display: flex;
     flex-direction: column;
@@ -56,6 +61,7 @@ export const Container = styled.div<IContainerProps>`
       width: max-content;
       padding: 8px 16px;
       border-radius: 50px;
+      white-space: nowrap;
 
       background: ${({ type }) => tint(0.2, colors.types[type])};
     }
@@ -90,4 +96,5 @@ export const PokeImage = styled.img`
   z-index: 3;
   display: block;
   max-width: 250px;
+  width: 100%;
 `;
