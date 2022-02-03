@@ -14,6 +14,14 @@ interface IStat {
   }
 }
 
+interface ISprites {
+  other: {
+    'official-artwork': {
+      front_default: string;
+    }
+  }
+}
+
 interface IPokemon {
   id: number;
   order: number;
@@ -22,6 +30,7 @@ interface IPokemon {
   stats: [IStat];
   height: number;
   weight: number;
+  sprites: ISprites;
 }
 
 export default IPokemon;

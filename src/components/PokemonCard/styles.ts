@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { shade, tint } from 'polished';
+import { tint } from 'polished';
 import * as colors from '../../styles/colors';
+import iconPokeballWhite from '../../assets/iconPokeballWhite.png';
 
 interface IContainerProps {
   type: string;
@@ -9,11 +10,26 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   color: ${colors.theme.contrastFont};
   background: ${({ type }) => colors.types[type]};
-  padding: 24px 16px;
+  padding: 0 16px;
   border-radius: 16px;
+  overflow: hidden;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    background: url(${iconPokeballWhite}) no-repeat;
+    background-size: cover;
+    opacity: 0.25;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+  }
 
   ul { 
     display: flex;
@@ -33,10 +49,18 @@ export const Container = styled.div<IContainerProps>`
   }
 `;
 
+export const Infos = styled.div`
+  padding: 24px 0;
+`;
+
+export const Illustration = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 8px 0;
+`;
+
 export const PokeId = styled.span`
-  position: absolute;
-  top: 8px;
-  right: 16px;
   text-align: right;
   font-weight: 700;
   font-size: 24px;
@@ -45,4 +69,11 @@ export const PokeId = styled.span`
   &::before {
     content: '#';
   }
+`;
+
+export const PokeImage = styled.img`
+  position: relative;
+  z-index: 3;
+  display: block;
+  max-width: 250px;
 `;

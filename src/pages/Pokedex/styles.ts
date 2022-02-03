@@ -9,4 +9,8 @@ export const PokemonList = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-top: 24px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `
