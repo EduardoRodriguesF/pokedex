@@ -76,6 +76,7 @@ export const Illustration = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   align-items: end;
   padding: 8px 0;
 `;
@@ -92,9 +93,10 @@ export const PokeId = styled.span`
 `;
 
 export const PokeImage = styled.img`
-  position: relative;
+  position: absolute;
   z-index: 3;
   display: block;
-  max-width: 250px;
-  width: 100%;
+  width: 220px;
+  bottom: 0;
+  right: 0;
 `;
