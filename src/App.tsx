@@ -1,11 +1,11 @@
 import GlobalStyle from "./styles/global";
-import Pokedex from './pages/Pokedex';
+import PokedexRoutes from "./routes";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Pokedex />
+      <PokedexRoutes />
     </>
   )
 }

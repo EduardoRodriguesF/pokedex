@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import IPokemon from '../../interfaces/IPokemon';
+import { useNavigate } from "react-router-dom";
 import api from '../../services/api';
 
 import { Container, Infos, Illustration, PokeId, PokeImage } from './styles';
@@ -11,6 +12,8 @@ type IProps  = {
 const PokemonCard: React.FC<IProps> = ({ name }) => {
   const [pokemon, setPokemon] = useState<IPokemon | null>(null);
 
+  const navigate = useNavigate();
+
   const getPokemon = useCallback(async () => {
     api.get(`pokemon/${name}`).then(({ data }) => {
       setPokemon(data);
@@ -20,8 +23,8 @@ const PokemonCard: React.FC<IProps> = ({ name }) => {
   const handleClick = useCallback(() => {
     if (!pokemon) return;
     
-    console.log('>>> click', name);
-  }, []);
+    navigate(`/entry/${pokemon.id}`);
+  }, [pokemon]);
 
   useEffect(() => {
     getPokemon();
@@ -32,7 +35,7 @@ const PokemonCard: React.FC<IProps> = ({ name }) => {
       <Infos>
         <h2>{pokemon?.name || 'loading...'}</h2>
         <ul>
-          {pokemon?.types.map((type) => <li>{type.type.name}</li>)}
+          {pokemon?.types.map((type, i) => <li key={i}>{type.type.name}</li>)}
         </ul>
       </Infos>
       <Illustration>
