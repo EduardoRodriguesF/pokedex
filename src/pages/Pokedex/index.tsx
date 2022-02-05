@@ -1,31 +1,39 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import PokemonCard from '../../components/PokemonCard';
-import api from '../../services/api';
+import React, { useCallback } from 'react';
+import { PokemonContextProvider } from '../../hooks/pokemon';
+import { useNavigate } from 'react-router-dom';
 
-import { Container, PokemonList } from './styles';
+import PokemonName from '../../components/PokemonName';
+import PokemonTypes from '../../components/PokemonTypes';
+import PokemonId from '../../components/PokemonId';
+import PokemonImage from '../../components/PokemonImage';
 
-type IPokemonListState = {
-  name: string;
-}
+import { Container, PokemonList, EntryCard, EntryCardLeft, EntryCardRight } from './styles';
 
-const Pokedex: React.FC = () => {
-  const [pokemonList, setPokemonList] = useState<IPokemonListState[]>([]);
+const Pokedex: React.FC = () => {  
+  const navigate = useNavigate();
 
-  const getPokemon = useCallback( async() => {
-    await api.get('pokemon/?limit=151').then(({ data }) => {
-      setPokemonList(data.results);
-    });
+  const handleCardClick = useCallback((entryId) => {
+    navigate(`/entry/${entryId}`);
   }, []);
 
-  useEffect(() => {
-    getPokemon();
-  }, []);
-  
   return (
     <Container>
       <h1>Pokedex</h1>
       <PokemonList>
-        {pokemonList.map(({ name }, i) => <PokemonCard name={name} key={i} />)}
+        {[...Array(151)].map((_, i) => (
+          <PokemonContextProvider key={i} entryId={i+1}>
+            <EntryCard onClick={() => handleCardClick(i+1)}>
+              <EntryCardLeft>
+                <PokemonName />
+                <PokemonTypes />
+              </EntryCardLeft>
+              <EntryCardRight>
+                <PokemonId />
+                <PokemonImage />
+              </EntryCardRight>
+            </EntryCard>
+          </PokemonContextProvider>
+        ))}
       </PokemonList>
     </Container>
   );

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import api from '../../services/api';
 
 interface IPokemonStat {
@@ -19,7 +19,7 @@ interface IPokemon {
 
 interface IPokemonContextProps {
   pokemon: IPokemon | null;
-  setEntry: (entryId: number) => void;
+  setEntry: (entryId: number | string) => void;
 }
 
 const DEFAULT_VALUE = {
@@ -30,7 +30,7 @@ const DEFAULT_VALUE = {
 const PokemonContext = createContext<IPokemonContextProps>({} as IPokemonContextProps);
 const usePokemon = () => useContext(PokemonContext);
 
-const PokemonContextProvider: React.FC = ({ children }) => {
+const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId }) => {
   const [pokemon, setPokemon] = useState<IPokemon | null>(DEFAULT_VALUE.pokemon);
 
   const setEntry = useCallback((entryId) => {
@@ -40,7 +40,7 @@ const PokemonContextProvider: React.FC = ({ children }) => {
         name: data.name,
         height: data.height,
         weight: data.weight,
-        image: data.sprites['official-artwork'].front_default,
+        image: data.sprites.other["official-artwork"].front_default,
         stats: data.stats.map((stat: { stat: { name: any; }; base_stat: any; effortk: any; }) => {
           return {
             name: stat.stat.name,
@@ -50,10 +50,14 @@ const PokemonContextProvider: React.FC = ({ children }) => {
         }),
         types: data.types.map((type: { type: { name: any; }; }) => type.type.name)
       }
-
+      
       setPokemon(entry);
     });
-  }, []);
+  }, [entryId]);
+
+  useEffect(() => {
+    setEntry(entryId);
+  }, [entryId]);
 
   return (
     <PokemonContext.Provider value={{ pokemon, setEntry }}>

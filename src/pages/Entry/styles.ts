@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import * as colors from '../../styles/colors';
 
-interface IContainerProps {
-  type: string;
-}
-
-export const Container = styled.div<IContainerProps>`
+export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ type }) => colors.types[type]};
+  background: ${colors.types['normal']};
   min-height: 100vh;
 
   img {
