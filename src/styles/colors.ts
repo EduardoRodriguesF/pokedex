@@ -8,7 +8,7 @@ const theme: IColors = {
   highlight: '#F9BA17',
   background: '#fff',
   background2: '#999',
-  absoluteBackground: '#fff',
+  absoluteBackground: '#F5F5F5',
 
   
 }

@@ -6,7 +6,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  background: ${colors.theme.background};
 
   a {
     color: ${colors.theme.font};

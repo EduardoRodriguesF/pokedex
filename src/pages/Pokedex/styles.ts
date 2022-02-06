@@ -5,7 +5,10 @@ import iconPokeballWhite from '../../assets/iconPokeballWhite.png';
 
 
 export const Container = styled.div`
-  margin: 24px;
+  padding: 24px;
+  background: ${colors.theme.background};
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 `;
 
 export const PokemonList = styled.div`

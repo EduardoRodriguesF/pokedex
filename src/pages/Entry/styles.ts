@@ -6,8 +6,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${colors.types['normal']};
-  min-height: 100vh;
 
   img {
     margin-bottom: -64px;
@@ -20,10 +18,9 @@ export const Content = styled.main`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
   background: ${colors.theme.background};
-  border-radius: 64px 64px 0 0;
-  padding-top: 64px;  
+  border-radius: 16px;
+  padding: 64px 0;  
 
   .pokemonTypeList { 
     display: flex;
