@@ -13,6 +13,7 @@ interface IPokemon {
   height: number;
   weight: number;
   image: string;
+  sprite: string;
   stats: IPokemonStat[];
   types: string[];
 }
@@ -41,6 +42,7 @@ const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId
         height: data.height,
         weight: data.weight,
         image: data.sprites.other["official-artwork"].front_default,
+        sprite: data.sprites.front_default,
         stats: data.stats.map((stat: { stat: { name: any; }; base_stat: any; effortk: any; }) => {
           return {
             name: stat.stat.name,

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PokemonName from '../../components/PokemonName';
 import PokemonTypes from '../../components/PokemonTypes';
 import PokemonId from '../../components/PokemonId';
-import PokemonImage from '../../components/PokemonImage';
+import PokemonSprite from '../../components/PokemonSprite';
 
 import { Container, PokemonList, EntryCard, EntryCardLeft, EntryCardRight } from './styles';
 
@@ -29,7 +29,7 @@ const Pokedex: React.FC = () => {
               </EntryCardLeft>
               <EntryCardRight>
                 <PokemonId />
-                <PokemonImage />
+                <PokemonSprite />
               </EntryCardRight>
             </EntryCard>
           </PokemonContextProvider>

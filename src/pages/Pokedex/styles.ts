@@ -101,9 +101,10 @@ export const EntryCardRight = styled.div`
     position: absolute;
     z-index: 3;
     display: block;
-    width: 220px;
+    width: 284px;
     height: auto;
-    bottom: 0;
-    right: 0;
+    bottom: -28px;
+    right: -28px;
+    image-rendering: pixelated;
   }
 `;
