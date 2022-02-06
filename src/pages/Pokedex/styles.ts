@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { tint } from 'polished';
 import * as colors from '../../styles/colors';
 import iconPokeballWhite from '../../assets/iconPokeballWhite.png';
 
@@ -38,6 +37,11 @@ export const EntryCard = styled.div`
   
   &:hover {
     transform: translateY(-3px);
+    filter: brightness(1.05);
+
+    &::before {
+      transform: rotate(10deg);
+    }
   }
 
   &::before {
@@ -51,6 +55,7 @@ export const EntryCard = styled.div`
     width: 300px;
     height: 300px;
     z-index: 1;
+    transition: all 0.35s;
   }
 
   h2 {
