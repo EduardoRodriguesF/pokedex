@@ -23,7 +23,7 @@ export const EntryCard = styled.div`
   min-width: 320px;
   height: 320px;
   color: ${colors.theme.contrastFont};
-  background: ${colors.types.normal};
+  background: ${colors.theme.background2};
   padding: 0 16px;
   border-radius: 16px;
   overflow: hidden;
@@ -64,7 +64,7 @@ export const EntryCard = styled.div`
     li { 
       display: inline;
       width: max-content;
-      padding: 8px 16px;
+      padding: 6px 16px;
       border-radius: 50px;
       white-space: nowrap;
       background: rgba(255, 255, 255, 0.25);
@@ -87,7 +87,7 @@ export const EntryCardRight = styled.div`
   span {
     text-align: right;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 40px;
     opacity: 0.25;
 
     &::before {
