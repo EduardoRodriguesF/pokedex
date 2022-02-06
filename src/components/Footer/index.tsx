@@ -8,10 +8,10 @@ const Footer: React.FC = () => {
     <Container>
       <SocialMedia>
         <a href="https://github.com/EduardoRodriguesF" rel="noopener">
-          <AiFillLinkedin size={32} />
+          <AiFillGithub size={32} title="Github" />
         </a>
         <a href="https://www.linkedin.com/in/edu-rodrigues-dev/" rel="noopener">
-          <AiFillGithub size={32} />
+          <AiFillLinkedin size={32} title="Linkedin" />
         </a>
       </SocialMedia>
       <Credits>
