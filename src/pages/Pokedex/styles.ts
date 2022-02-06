@@ -67,7 +67,6 @@ export const EntryCard = styled.div`
       padding: 6px 16px;
       border-radius: 50px;
       white-space: nowrap;
-      background: rgba(255, 255, 255, 0.25);
     }
   }
 `;
