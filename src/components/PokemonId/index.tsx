@@ -4,7 +4,7 @@ import { usePokemon } from '../../hooks/pokemon';
 const PokemonId: React.FC = () => {
   const { pokemon } = usePokemon();
 
-  return <span>{pokemon?.id || '???'}</span>;
+  return <span className="pokemonId">{pokemon?.id || '???'}</span>;
 }
 
 export default PokemonId;

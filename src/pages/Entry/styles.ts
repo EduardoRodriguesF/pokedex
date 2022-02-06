@@ -27,7 +27,8 @@ export const Content = styled.main`
   width: 100%;
   background: ${colors.theme.background};
   border-radius: 16px;
-  padding: 64px 0;  
+  box-sizing: border-box;
+  padding: 64px 16px;  
   z-index: 4;
 
   h2 {
@@ -38,5 +39,21 @@ export const Content = styled.main`
     display: flex;
     gap: 8px;
     margin-top: 16px;
+  }
+`;
+
+export const Identifications = styled.div`
+  display: flex;
+
+  .pokemonId {
+    opacity: 0.5;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: right;
+    margin-left: 8px;
+
+    &::before {
+      content: '#'
+    }
   }
 `;

@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PokemonContextProvider, usePokemon } from '../../hooks/pokemon';
+import { PokemonContextProvider } from '../../hooks/pokemon';
 
 import PokemonName from '../../components/PokemonName';
+import PokemonId from '../../components/PokemonId';
 import PokemonImage from '../../components/PokemonImage';
 import PokemonTypes from '../../components/PokemonTypes';
 import PokemonTypeBackgroundBlock from '../../components/PokemonTypeBackgroundBlock';
 
-import { Container, Content } from './styles';
+import { Container, Content, Identifications } from './styles';
 
 const Entry: React.FC = () => {
   const { entryId } = useParams();
@@ -18,7 +19,10 @@ const Entry: React.FC = () => {
         <PokemonTypeBackgroundBlock />
         <PokemonImage />
         <Content>
-          <PokemonName />
+          <Identifications>
+            <PokemonName />
+            <PokemonId />
+          </Identifications>
           <PokemonTypes />
         </Content>
       </Container>
