@@ -30,6 +30,7 @@ export const Content = styled.main`
   box-sizing: border-box;
   padding: 64px 16px;  
   z-index: 4;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
 
   h2 {
     font-size: 40px;

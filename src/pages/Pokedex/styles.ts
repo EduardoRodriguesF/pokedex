@@ -16,6 +16,7 @@ export const PokemonList = styled.div`
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 24px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
 `;
 
 export const EntryCard = styled.div`
