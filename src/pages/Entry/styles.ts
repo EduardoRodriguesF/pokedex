@@ -44,6 +44,7 @@ export const Content = styled.main`
 
 export const Identifications = styled.div`
   display: flex;
+  align-items: center;
 
   .pokemonId {
     opacity: 0.5;
