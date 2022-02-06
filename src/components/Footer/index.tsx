@@ -7,17 +7,17 @@ const Footer: React.FC = () => {
   return(
     <Container>
       <SocialMedia>
-        <a href="https://github.com/EduardoRodriguesF">
+        <a href="https://github.com/EduardoRodriguesF" rel="noopener">
           <AiFillLinkedin size={32} />
         </a>
-        <a href="https://www.linkedin.com/in/edu-rodrigues-dev/">
+        <a href="https://www.linkedin.com/in/edu-rodrigues-dev/" rel="noopener">
           <AiFillGithub size={32} />
         </a>
       </SocialMedia>
       <Credits>
-        created by <a target="_blank" href="https://linktr.ee/eduardo.dev">Eduardo Rodrigues</a>
+        created by <a target="_blank" href="https://linktr.ee/eduardo.dev" rel="noopener">Eduardo Rodrigues</a>
       </Credits>
-      <BuyMeACoffe target="_blank" href="https://www.buymeacoffee.com/edurodrigues">
+      <BuyMeACoffe target="_blank" href="https://www.buymeacoffee.com/edurodrigues" rel="noopener">
         <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
         <span>buy me a coffee</span>
       </BuyMeACoffe>
