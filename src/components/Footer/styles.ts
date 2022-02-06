@@ -19,6 +19,7 @@ export const Container = styled.div`
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 12px;
   }
 `;
@@ -43,7 +44,7 @@ export const BuyMeACoffe = styled.a`
   background-color: #40DCA5;
   border-radius: 50px;
   border: 1px solid transparent;
-  padding: 12px 16px;
+  padding: 4px 16px;
   letter-spacing: 0.6px;
   box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5);
   transition: 0.3s all;
