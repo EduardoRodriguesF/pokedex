@@ -12,9 +12,8 @@ export const TypeList = styled.ul`
 
 export const TypeCard = styled.li<ITypeCardProps>`
   position: relative;
-  color: ${({ type }) => tint(0.65, colors.types[type])};
-  background: ${({ type }) => rgba(colors.types[type], 0.5)};
-  border: 2px solid ${({ type }) => tint(0.65, colors.types[type])};
+  color: ${({ type }) => tint(.75, colors.types[type])};
+  background: ${({ type }) => rgba(colors.types[type], 1)};
   box-sizing: border-box;
   font-weight: 600;
   padding: 6px 16px;

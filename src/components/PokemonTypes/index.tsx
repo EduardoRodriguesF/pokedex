@@ -7,7 +7,7 @@ const PokemonTypes: React.FC = () => {
   const { pokemon } = usePokemon();
 
   return (
-    <TypeList>
+    <TypeList className="pokemonTypeList">
       {pokemon?.types.map((type, i) => <TypeCard type={type} key={i}>{type}</TypeCard>)}
     </TypeList>
   );

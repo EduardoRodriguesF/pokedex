@@ -54,7 +54,7 @@ export const EntryCard = styled.div`
     font-size: 30px;
   }
 
-  ul { 
+  .pokemonTypeList { 
     display: flex;
     flex-direction: column;
     list-style: none;

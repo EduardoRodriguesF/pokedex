@@ -24,4 +24,10 @@ export const Content = styled.main`
   background: ${colors.theme.background};
   border-radius: 64px 64px 0 0;
   padding-top: 64px;  
+
+  .pokemonTypeList { 
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
 `;
