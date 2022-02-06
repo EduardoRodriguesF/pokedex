@@ -23,7 +23,7 @@ export const EntryCard = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
-  min-width: 320px;
+  min-width: 350px;
   height: 320px;
   color: ${colors.theme.contrastFont};
   background: ${colors.theme.background2};
@@ -103,8 +103,8 @@ export const EntryCardRight = styled.div`
     display: block;
     width: 284px;
     height: auto;
-    bottom: -28px;
-    right: -28px;
+    bottom: -16px;
+    right: -16px;
     image-rendering: pixelated;
   }
 `;
