@@ -6,10 +6,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 
   img {
     margin-bottom: -64px;
-    z-index: 1;
+    z-index: 5;
+  }
+  
+  .pokemonTypeBackgroundBlock {
+    width: 100%;
+    height: 500px;
+    z-index: 3;
   }
 `;
 
@@ -21,6 +28,11 @@ export const Content = styled.main`
   background: ${colors.theme.background};
   border-radius: 16px;
   padding: 64px 0;  
+  z-index: 4;
+
+  h2 {
+    font-size: 40px;
+  }
 
   .pokemonTypeList { 
     display: flex;
