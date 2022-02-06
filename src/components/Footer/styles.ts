@@ -2,9 +2,10 @@ import styled from "styled-components";
 import * as colors from '../../styles/colors';
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 16px;
 
   a {
@@ -15,6 +16,11 @@ export const Container = styled.div`
       opacity: 0.85;
     }
   }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 `;
 
 export const SocialMedia = styled.div`
@@ -23,10 +29,12 @@ export const SocialMedia = styled.div`
 `;
 
 export const Credits = styled.div`
-
+  text-align: center;
+  white-space: nowrap;
 `;
 
 export const BuyMeACoffe = styled.a`
+  width: max-content;
   line-height: 2;
   text-decoration: none;
   display: inline-flex;
