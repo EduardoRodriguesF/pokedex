@@ -13,18 +13,20 @@ export const Container = styled.ul`
 
 export const Stat = styled.li`
   display: grid;
-  grid-template-columns: 5fr 1fr 10fr;
+  grid-template-columns: 6fr 1fr 10fr;
   gap: 16px;
   align-items: center;
 `;
 
 export const StatName = styled.p`
   opacity: 0.7;
-  text-align: right;
+  font-size: 14px;
+  white-space: nowrap;
 `;
 
 export const StatValue = styled.span`
   text-align: center;
+  font-size: 14px;
 `;
 
 export const StatBar = styled.div<IStatBarProps>`

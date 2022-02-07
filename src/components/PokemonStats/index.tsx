@@ -10,7 +10,7 @@ const PokemonStats: React.FC = () => {
     <Container className="pokemonStatsList">
       {pokemon?.stats.map((stat) => (
         <Stat>
-          <StatName>{stat.name}</StatName>
+          <StatName>{stat.name.replace('special-', 'sp. ')}</StatName>
           <StatValue>{stat.value}</StatValue>
           <StatBar value={stat.value} />
         </Stat>
