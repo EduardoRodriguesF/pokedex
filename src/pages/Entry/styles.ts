@@ -41,6 +41,10 @@ export const Content = styled.main`
     gap: 8px;
     margin-top: 16px;
   }
+
+  .pokemonStatsList {
+    margin-top: 16px;
+  }
 `;
 
 export const Identifications = styled.div`
