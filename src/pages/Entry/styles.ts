@@ -11,6 +11,9 @@ export const Container = styled.div`
   img {
     margin-bottom: -64px;
     z-index: 5;
+    width: 80%;
+    height: auto;
+    max-width: 475px;
   }
   
   .pokemonTypeBackgroundBlock {
@@ -33,7 +36,7 @@ export const Content = styled.main`
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
 
   h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .pokemonTypeList { 
@@ -53,7 +56,7 @@ export const Identifications = styled.div`
 
   .pokemonId {
     opacity: 0.5;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     text-align: right;
     margin-left: 8px;
