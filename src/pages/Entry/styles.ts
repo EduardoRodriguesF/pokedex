@@ -39,11 +39,11 @@ export const Content = styled.main`
   .pokemonTypeList { 
     display: flex;
     gap: 8px;
-    margin-top: 16px;
+    margin-top: 4px;
   }
 
   .pokemonStatsList {
-    margin-top: 16px;
+    margin-top: 32px;
   }
 `;
 
@@ -61,5 +61,37 @@ export const Identifications = styled.div`
     &::before {
       content: '#'
     }
+  }
+`;
+
+export const Physics = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  margin-top: 24px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  .pokemonHeight {
+    &::after {
+      content: 'cm';
+      margin-left: 4px;
+    }
+  }
+
+  .pokemonWeight {
+    &::after {
+      content: 'kg';
+      margin-left: 4px;
+    }
+  }
+`;
+
+export const PhysicsItem = styled.div`
+  font-weight: 600;
+  h3 { 
+    opacity: 0.5;
+    font-weight: 600;
   }
 `;

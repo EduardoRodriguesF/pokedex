@@ -9,7 +9,9 @@ import PokemonTypes from '../../components/PokemonTypes';
 import PokemonTypeBackgroundBlock from '../../components/PokemonTypeBackgroundBlock';
 import PokemonStats from '../../components/PokemonStats';
 
-import { Container, Content, Identifications } from './styles';
+import { Container, Content, Identifications, Physics, PhysicsItem } from './styles';
+import PokemonHeight from '../../components/PokemonHeight';
+import PokemonWeight from '../../components/PokemonWeight';
 
 const Entry: React.FC = () => {
   const { entryId } = useParams();
@@ -25,6 +27,16 @@ const Entry: React.FC = () => {
             <PokemonId />
           </Identifications>
           <PokemonTypes />
+          <Physics>
+            <PhysicsItem>
+              <h3>height</h3>
+              <PokemonHeight />
+            </PhysicsItem>
+            <PhysicsItem>
+              <h3>weight</h3>
+              <PokemonWeight />
+            </PhysicsItem>
+          </Physics>
           <PokemonStats />
         </Content>
       </Container>
