@@ -1,6 +1,5 @@
-import React, { useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { IoIosArrowRoundBack } from 'react-icons/io';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { PokemonContextProvider } from '../../hooks/pokemon';
 
 import PokemonName from '../../components/PokemonName';
@@ -13,20 +12,16 @@ import PokemonStats from '../../components/PokemonStats';
 import { Container, Content, Identifications, Physics, PhysicsItem } from './styles';
 import PokemonHeight from '../../components/PokemonHeight';
 import PokemonWeight from '../../components/PokemonWeight';
+import GoBackButton from '../../components/GoBackButton';
 
 const Entry: React.FC = () => {
   const { entryId } = useParams();
-  const navigate = useNavigate();
-
-  const handleGoBack = useCallback(() => {
-    navigate('/');
-  }, []);
 
   return (
     <PokemonContextProvider entryId={Number(entryId)}>
       <Container>
         <PokemonTypeBackgroundBlock />
-        <IoIosArrowRoundBack size={42} className="backButton" title="Go back" onClick={handleGoBack} />
+        <GoBackButton />
         <PokemonImage />
         <Content>
           <Identifications>

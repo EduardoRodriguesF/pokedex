@@ -7,15 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 2;
-
-  .backButton {
-    position: absolute;
-    left: 16px;
-    top: 16px;
-    color: #fff;
-    z-index: 9;
-  }
-
+  
   img {
     margin-top: 64px;
     margin-bottom: -64px;
