@@ -70,6 +70,10 @@ export const Identifications = styled.div`
 export const Physics = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  box-sizing: border-box;
+  max-width: 500px;
+  width: 100%;
   gap: 24px;
   padding: 24px;
   margin-top: 24px;
