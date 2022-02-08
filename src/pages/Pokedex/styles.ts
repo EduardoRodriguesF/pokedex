@@ -8,6 +8,10 @@ export const Container = styled.div`
   background: ${colors.theme.background};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
+
+  @media (max-width: 768px) {
+    padding: 24px 16px;
+  }
 `;
 
 export const PokemonList = styled.div`
