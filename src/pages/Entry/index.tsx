@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { PokemonContextProvider } from '../../hooks/pokemon';
 
@@ -16,6 +16,10 @@ import GoBackButton from '../../components/GoBackButton';
 
 const Entry: React.FC = () => {
   const { entryId } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <PokemonContextProvider entryId={Number(entryId)}>
