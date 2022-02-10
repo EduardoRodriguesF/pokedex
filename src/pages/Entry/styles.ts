@@ -57,7 +57,7 @@ export const Identifications = styled.div`
   align-items: center;
 
   .pokemonId {
-    opacity: 0.5;
+    opacity: 0.6;
     font-size: 20px;
     font-weight: 600;
     text-align: right;
@@ -100,7 +100,7 @@ export const Physics = styled.div`
 export const PhysicsItem = styled.div`
   font-weight: 600;
   h3 { 
-    opacity: 0.5;
+    opacity: 0.6;
     font-weight: 600;
   }
 `;
