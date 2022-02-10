@@ -38,6 +38,10 @@ export const EntryCard = styled.div`
   transform: none;
   transition: all 0.35s;
   cursor: pointer;
+
+  @media (max-width: 400px) {
+    min-width: 200px;
+  }
   
   &:hover {
     transform: translateY(-3px);
