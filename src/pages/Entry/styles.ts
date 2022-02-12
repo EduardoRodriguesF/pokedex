@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as colors from '../../styles/colors';
+import iconPokeballWhite from '../../assets/iconPokeballWhite.png';
 
 export const Container = styled.div`
   position: relative;
@@ -21,6 +22,20 @@ export const Container = styled.div`
     width: 100%;
     height: 500px;
     z-index: 3;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url(${iconPokeballWhite}) no-repeat;
+      background-size: contain;
+      aspect-ratio: 1;
+      width: 250px;
+      height: auto;
+      right: -50px;
+      top: -50px;
+      opacity: 0.5;
+    }
   }
 `;
 
