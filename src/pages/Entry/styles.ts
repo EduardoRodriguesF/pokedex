@@ -44,7 +44,7 @@ export const Content = styled.main`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 800px;
+  min-height: 600px;
   background: ${colors.theme.background};
   border-radius: 16px;
   box-sizing: border-box;
