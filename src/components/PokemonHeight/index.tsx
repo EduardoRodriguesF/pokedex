@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { usePokemon } from '../../hooks/pokemon';
 
-
 const PokemonHeight: React.FC = () => {
   const [height, setHeight] = useState('???');
 

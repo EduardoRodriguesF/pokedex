@@ -4,14 +4,16 @@ import { PokemonContextProvider } from '../../hooks/pokemon';
 
 import PokemonNameSkeleton from '../../components/PokemonName/skeleton';
 import PokemonTypesSkeleton from '../../components/PokemonTypes/skeleton';
+import PokemonHeightSkeleton from '../../components/PokemonHeight/skeleton';
+import PokemonWeightSkeleton from '../../components/PokemonWeight/skeleton';
 
 const PokemonName = React.lazy(() => import('../../components/PokemonName'));
 const PokemonId = React.lazy(() => import('../../components/PokemonId'));
 const PokemonTypes = React.lazy(() => import('../../components/PokemonTypes'));
 import PokemonTypeBackgroundBlock from '../../components/PokemonTypeBackgroundBlock';
+const PokemonHeight = React.lazy(() => import('../../components/PokemonHeight'));
+const PokemonWeight = React.lazy(() => import('../../components/PokemonWeight'));
 import PokemonStats from '../../components/PokemonStats';
-import PokemonHeight from '../../components/PokemonHeight';
-import PokemonWeight from '../../components/PokemonWeight';
 import PokemonImage from '../../components/PokemonImage';
 
 import { Container, Content, Identifications, Physics, PhysicsItem } from './styles';
@@ -43,11 +45,15 @@ const Entry: React.FC = () => {
           <Physics>
             <PhysicsItem>
               <h3>height</h3>
-              <PokemonHeight />
+              <Suspense fallback={<PokemonHeightSkeleton />}>
+                <PokemonHeight />
+              </Suspense>
             </PhysicsItem>
             <PhysicsItem>
               <h3>weight</h3>
-              <PokemonWeight />
+              <Suspense fallback={<PokemonWeightSkeleton />}>
+                <PokemonWeight />
+              </Suspense>
             </PhysicsItem>
           </Physics>
           <PokemonStats />
