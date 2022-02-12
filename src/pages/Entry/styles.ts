@@ -99,7 +99,7 @@ export const Physics = styled.div`
 
   .pokemonHeight {
     &::after {
-      content: 'cm';
+      content: 'm';
       margin-left: 4px;
     }
   }
