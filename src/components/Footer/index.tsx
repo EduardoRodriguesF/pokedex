@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return(
     <Container>
       <SocialMedia>
-        <a href="https://github.com/EduardoRodriguesF" rel="noopener">
+        <a href="https://github.com/EduardoRodriguesF/pokedex" rel="noopener">
           <AiFillGithub size={32} title="Github" />
         </a>
         <a href="https://www.linkedin.com/in/edu-rodrigues-dev/" rel="noopener">
