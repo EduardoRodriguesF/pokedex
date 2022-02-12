@@ -20,6 +20,7 @@ interface IPokemon {
 
 interface IPokemonContextProps {
   pokemon: IPokemon | null;
+  isLoading: boolean;
   setEntry: (entryId: number | string) => void;
 }
 
@@ -32,6 +33,7 @@ const PokemonContext = createContext<IPokemonContextProps>({} as IPokemonContext
 const usePokemon = () => useContext(PokemonContext);
 
 const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [pokemon, setPokemon] = useState<IPokemon | null>(DEFAULT_VALUE.pokemon);
 
   const setEntry = useCallback((entryId) => {
@@ -54,6 +56,7 @@ const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId
       }
       
       setPokemon(entry);
+      setIsLoading(false);
     });
   }, [entryId]);
 
@@ -62,7 +65,7 @@ const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId
   }, [entryId]);
 
   return (
-    <PokemonContext.Provider value={{ pokemon, setEntry }}>
+    <PokemonContext.Provider value={{ pokemon, isLoading, setEntry }}>
       {children}
     </PokemonContext.Provider>
   )
