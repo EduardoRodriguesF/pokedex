@@ -62,7 +62,7 @@ export const EntryCard = styled.div`
     opacity: 0.25;
     width: 300px;
     height: 300px;
-    z-index: 1;
+    z-index: -1;
     transition: all 0.35s;
   }
 
