@@ -37,6 +37,8 @@ const PokemonContextProvider: React.FC<{entryId: number}> = ({ children, entryId
   const [pokemon, setPokemon] = useState<IPokemon | null>(DEFAULT_VALUE.pokemon);
 
   const setEntry = useCallback((entryId) => {
+    setIsLoading(true);
+    
     api.get(`pokemon/${entryId}`).then(({ data }) => {
       const entry = {
         id: data.id,
