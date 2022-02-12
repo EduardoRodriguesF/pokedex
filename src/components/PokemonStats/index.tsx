@@ -8,8 +8,8 @@ const PokemonStats: React.FC = () => {
 
   return (
     <Container className="pokemonStatsList">
-      {pokemon?.stats.map((stat) => (
-        <Stat>
+      {pokemon?.stats.map((stat, key) => (
+        <Stat key={key}>
           <StatName>{stat.name.replace('special-', 'sp. ')}</StatName>
           <StatValue>{stat.value}</StatValue>
           <StatBar value={stat.value} />
